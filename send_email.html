@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Email Login</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+        }
+
+        .container {
+            max-width: 400px;
+            margin: 100px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            
+        }
+
+        h1 {
+            text-align: center;
+            color: rgb(62, 87, 122);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        textarea,
+        input[type="submit"] {
+            width: 100%;
+            padding: 5px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            box-sizing: border-box;
+        }
+        .feedback textarea,
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            opacity: 60px;
+            border-radius: 8px;
+            background-color: rgb(217, 217, 217); /* Green background */
+            border: 2px solid black; /* Remove border */
+            color: black; /* White text */
+            padding: 10px 20px; /* Padding */
+            text-decoration: none; /* Remove underline */
+            display: inline-block; /* Make it behave like an inline element */
+            font-size: 16px; /* Font size */
+            margin: 4px 2px -10px; /* Margin */
+            cursor: pointer; /* Cursor on hover */
+            border-radius: 8px; /* Rounded corners */
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: rgb(78, 128, 198);
+        }
+
+        textarea:focus {
+            outline: none;
+            border-color: rgb(78, 128, 198);
+        }
+        body{
+            background-image: linear-gradient(to right, rgb(92, 168, 200), rgb(153, 153, 153));
+            margin: 0;
+            padding: 0;
+            height: 100%;
+        }
+        h4{
+            color: rgb(62, 87, 122);
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Send Email To Applicant </h1>
+        <form action="/accept" method="post">
+            <textarea id="emails" name="emails" rows="2" placeholder="Enter the email" required></textarea><br><br>
+            <div class="feedback">
+                <h4>Feedback</h4>
+                <textarea id="feedback" name="feedback" rows="4" placeholder="Give your opinion." required></textarea>
+            </div>
+            <input type="submit" value="Send Email">
+        </form>
+    </div>
+</body>
+</html>

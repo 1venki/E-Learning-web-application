@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+  />
+
+  <title>Learning App</title>
+</head>
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+  }
+  .topbar {
+    background-color: rgb(87, 90, 90);
+    width: 100%;
+    height: 70px;
+    display: flex;
+    position: fixed;
+    top: 0;
+  }
+  .profile {
+    height: 50px;
+    width: 60px;
+    border-radius: 50%;
+    background-color: aqua;
+    margin-left: 20px;
+    margin-top: 8px;
+    text-align: center;
+    position: absolute;
+    right: 60px;
+  }
+  .menu {
+    position: absolute;
+    right: 0px;
+    margin-top: 19px;
+    margin-right: 20px;
+    font-size: 25px;
+  }
+  .name {
+    margin-left: 20px;
+  }
+  .course_pic1 {
+    height: 140px;
+    width: 170px;
+    text-align: center;
+    flex-direction: column;
+    background-image: url('ics.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  .course_pic2 {
+    height: 140px;
+    width: 170px;
+    text-align: center;
+    flex-direction: column;
+    background-image: url('ads.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  .body_ {
+    margin-left: 30px;
+    margin-top: 80px;
+    overflow-y: auto;
+    height: 2000px;
+  }
+  .search-container {
+    position: relative;
+    margin-top: 10px;
+    margin-left: 460px;
+    width: 400px; /* Adjust as needed */
+  }
+  .search {
+    width: 100%;
+    background-color: #cdd1b9;
+    padding: 8px 30px 8px 10px; /* Adjust padding to position the icon correctly */
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    box-sizing: border-box;
+  }
+  .search-button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 9px 10px; /* Adjust padding to position the icon correctly */
+    border: none;
+    background-color: #cdd1b9;
+    color: #666;
+    border-radius: 0 20px 20px 0;
+    cursor: pointer;
+  }
+  .course_cointainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 20px;
+  }
+  .course-container {
+    background-color: lightgray;
+    height: 600px;
+    width: 94%;
+    margin-top: 15px;
+    margin-left: 15px;
+  }
+  .course_name {
+    background-color: lightgray;
+    height: 140px;
+    width: 620px;
+    display: flex;
+    cursor: pointer;
+  }
+  .course_pic {
+    height: 140px;
+    width: 170px;
+    background-color: aquamarine;
+    text-align: center;
+  }
+  .text {
+    padding-top: 40px;
+  }
+  .discription {
+    width: calc(100% - 170px); /* Adjusted width for description */
+    padding: 20px;
+  }
+  .fill {
+    text-align: center;
+    padding-top: 30px;
+  }
+  .button {
+    width: 150px;
+    height: 50px;
+    border-radius: 20px;
+    background-color: rgb(108, 118, 168);
+    color: bisque;
+    margin-left: 570px;
+    text-align: center;
+    padding-top: 0.1px;
+    cursor: pointer;
+  }
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: 0px;
+  }
+  .display {
+    display: flex;
+    margin-bottom: 10px;
+    margin-left: 20px;
+  }
+  #submit {
+    margin-left: 580px;
+    height: 50px;
+    width: 80px;
+    border-radius: 20px;
+    cursor: pointer;
+    background-color: rgb(108, 118, 168);
+    color: bisque;
+  }
+  .pic1 {
+    height: 110px;
+    width: 110px;
+    padding-left: 10px; /* Remove background */
+    margin-top: -20px;
+  }
+
+  .logo {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  body {
+    margin: 0;
+    padding: 0;
+    background-image: linear-gradient(to bottom right, rgb(92, 168, 200), rgb(153, 153, 153));
+  }
+</style>
+<body>
+  <form action="/join" method="post">
+  <div class="topbar">
+    <img src="logo.png" alt="logo" class="pic1"><div class="logo">Patashala</div>
+    <div class="profile"><p>Profile</p></div>
+    <div class="menu"><i class="fas fa-bars"></i></div>
+  </div>
+  <div class="body_">
+    <div class="search-container">
+      <input type="text" placeholder="search your course" class="search" />
+      <button type="submit" class="search-button">
+        <i class="fa fa-search"></i>
+      </button>
+    </div>
+    <div class="course-container">
+      <h2 class="fill">Course Registration Form</h2>
+      <form id="courseRegistrationForm" action="/student/apply" method="POST">
+        <div class="display">
+          <label for="firstName">First Name:</label><br />
+          <input
+            type="text"
+            id="firstName"
+            name="firstName"
+            required
+          /><br /><br />
+        </div>
+        <div class="display">
+          <label for="lastName">Last Name:</label><br />
+          <input
+            type="text"
+            id="lastName"
+            name="lastName"
+            required
+          /><br /><br />
+        </div>
+        <div class="display">
+          <label for="email">Email:</label><br />
+          <input type="email" id="email" name="email" required /><br /><br />
+        </div>
+        <div class="display">
+          <label for="course">Conform your course</label><br />
+          <input type="text" id="course" name="course" required /><br /><br />
+        </div>
+        <div class="display">
+          <label for="dob">Date of Birth:</label><br />
+          <input type="date" id="dob" name="dob" required /><br /><br />
+        </div>
+        <div class="display">
+          <label for="qualification">Qualification:</label><br />
+          <input
+            type="qualification"
+            id="qualification"
+            name="qualification"
+            required
+          /><br /><br />
+        </div>
+        <div class="display">
+          <label for="experience">Experience:</label><br />
+          <input
+            type="experience"
+            id="experience"
+            name="experience"
+            required
+          /><br /><br />
+        </div>
+        <div class="display">
+          <label for="reason">Reason:</label><br />
+          <textarea id="reason" name="reason" rows="3" cols="50" required></textarea><br /><br />
+        </div>
+
+        <input type="submit" value="Submit" id="submit" onclick="submitForm()"/>
+      </form>
+    </div>
+    <h1>Recommended courses</h1>
+    <div class="course_cointainer">
+      <div class="course_name" onclick="redirectToCourse('ICS')">
+        <div class="course_pic1"></div>
+        <p class="discription">
+          <b>Description</b><br />
+          ICS, which stands for Information and Communication Technology, refers to the integration of telecommunications, computers.
+        </p>
+      </div>
+      <div class="course_name" onclick="redirectToCourse('ADS')">
+        <div class="course_pic2"></div>
+        <p class="discription">
+          <b>Description</b><br />
+          Advanced Data Structures, is a branch of computer science that deals with the design, analysis, and implementation of efficient data.
+        </p>
+      </div>
+    </div>
+  </div>
+</form>
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+
+    <title>Learning App</title>
+  </head>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-image: linear-gradient(to bottom right, rgb(92, 168, 200), rgb(153, 153, 153));
+    }
+    .topbar {
+      background-color: rgb(87, 90, 90);
+      width: 100%;
+      height: 70px;
+      display: flex;
+      position: fixed;
+      top: 0;
+    }
+    .logo {
+      height: 110px;
+      width: 110px;
+      border-radius: 50%;
+      
+      margin-left: 20px;
+      margin-top: 8px;
+      text-align: center;
+    }
+    .profile {
+      height: 50px;
+      width: 60px;
+      border-radius: 50%;
+      background-color: aqua;
+      margin-left: 20px;
+      margin-top: 8px;
+      text-align: center;
+      position: absolute;
+      right: 60px;
+    }
+    .menu {
+      position: absolute;
+      right: 0px;
+      margin-top: 19px;
+      margin-right: 20px;
+      font-size: 25px;
+    }
+    .name {
+      margin-left: 20px;
+    }
+    .body_ {
+      margin-left: 30px;
+      margin-top: 80px;
+      overflow-y: auto;
+      height: 1000px;
+    }
+    .search-container {
+      position: relative;
+      margin-top: 10px;
+      margin-left: 460px;
+      width: 400px; /* Adjust as needed */
+    }
+    .search {
+      width: 100%;
+      background-color: #cdd1b9;
+      padding: 8px 30px 8px 10px; /* Adjust padding to position the icon correctly */
+      border: 1px solid #ccc;
+      border-radius: 20px;
+      box-sizing: border-box;
+    }
+    .search-button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      padding: 9px 10px; /* Adjust padding to position the icon correctly */
+      border: none;
+      background-color: #cdd1b9;
+      color: #666;
+      border-radius: 0 20px 20px 0;
+      cursor: pointer;
+    }
+    .course_cointainer {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin-top: 20px;
+    }
+    .course-container {
+      background-color: lightgray;
+      height: 1030px;
+      width: 94%;
+      margin-top: 15px;
+      margin-left: 15px;
+    }
+    .course_cspp {
+      margin-top: 70px;
+      display: flex;
+    }
+    .course_name {
+      background-color: lightgray;
+      height: 140px;
+      width: 620px;
+      display: flex;
+      margin-left: 15px;
+      cursor: pointer;
+    }
+    .img {
+      height: 140px;
+      width: 170px;
+      text-align: center;
+      flex-direction: column;
+    }
+    .text {
+      padding-top: 40px;
+    }
+    .discription {
+      width: calc(100% - 170px); /* Adjusted width for description */
+      padding: 20px;
+      margin: 0px;
+    }
+    /* .mentor {
+      height: 140px;
+      width: 170px;
+      background-color: aquamarine;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+    } */
+    #mentor {
+      padding-top: 30px;
+    }
+    .mentor-details {
+      margin-top: 15px;
+      margin-left: 25px;
+      font-weight: bold;
+      padding-top: 10px;
+    }
+    .course-details {
+      margin-left: 0px;
+    }
+    .about-course {
+      margin-bottom: 50px;
+      padding-left: 15px;
+      font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+      font-size: 17px;
+    }
+    .button{
+      width: 150px;
+      height: 50px;
+      border-radius: 20px;
+      background-color: rgb(108, 118, 168);
+      color: bisque;
+      margin-left: 490px;
+      text-align: center;
+      padding-top: 0.1px;
+      margin-top: 60px;
+      cursor: pointer;
+}
+
+    .pic1 {
+  height: 110px;
+  width: 110px;
+  padding-left: 10px; /* Remove background */
+  margin-top: -20px;
+  
+}
+
+.logo {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  color: #fff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+  </style>
+  <body>
+    <div class="topbar">
+      <div class="topbar">
+        <img src="logo.png" alt="logo" class="pic1"><div class="logo">Patashala</div>
+        <!-- <div class="profile"><p>Profile</p></div> -->
+        <div class="menu"><i class="fas fa-bars"></i></div>
+      </div>
+    </div>
+    <div class="body_">
+      <div class="search-container">
+        <input type="text" placeholder="search your course" class="search" />
+        <button type="submit" class="search-button">
+          <i class="fa fa-search"></i>
+        </button>
+      </div>
+      <div class="course-container">
+        <div class="course-details">
+          <!-- <div class="mentor">
+            <h3 id="mentor">Mentor</h3>
+          </div> -->
+          <div class="mentor-details">
+            <h2>Mentor</h2>
+            <p>Name: Vint Cerf</p>
+            <p>Qualification: Master of Science (MS) in Computer Science,</p>
+          </div>
+        </div>
+        <div class="course_cspp">
+          <div class="course_pic"><img src="ics.png" alt="ics" class="img"></div>
+          <p class="discription">
+            <b>Course Name: Integrated computer systems</b><br><br>
+            <b>Description</b><br />
+            ICS, which stands for Information and Communication Technology, encompasses a broad range of technologies, systems, and applications that facilitate the management, storage, retrieval, transmission, and manipulation of digital information. It plays a crucial role in various aspects of modern society, including business operations, communication, education, healthcare, entertainment.
+          </p>
+        </div>
+        <div class="about-course">
+          <h4>What you will learn in this course?</h4>
+          <ul>
+            <li>Learning about computer components, peripherals, and their functions.</li>
+            <li>Studying network architectures, protocols, and communication technologies.</li>
+            <li>Configuring and troubleshooting computer networks, routers, switches, and firewalls.</li>
+            <li>Learning about cybersecurity threats, vulnerabilities, and attack vectors.</li>
+            <li>Using data analytics tools and techniques to analyze and visualize data.</li>
+          </ul>
+          <h4>Duration:</h4>
+      <p>You will complete this course in 2 months.</p>
+      <h4>Recordings Availability:</h4>
+      <p>All sessions will be recorded and accessible to students for revision and review purposes.</p>
+      <h4>Instructions:</h4>
+      <ul>
+        <li>Regular assignments and quizzes will be provided to assess your understanding.</li>
+        <li>Participation in online discussions and group projects is encouraged.</li>
+        <li>Office hours will be available for one-on-one doubt-clearing sessions with the instructor.</li>
+        <li>A certificate of completion will be awarded upon successful finishing of the course.</li>
+      </ul>
+      <h4>Start Date: <p>01-8-2024</p></h4>
+          
+          <div class="button" onclick="redirectToCourse('join')"><h3>Join Course</h3></div>
+        </div>
+        </div>
+      </div>
+      <h3>Recommended Courses</h3>
+      <div class="course_cointainer">
+        <div class="course_name" onclick="redirectToCourse('CSPP')">
+          <div class="course_pic"><img src="python.png" alt="python" class="img"></div>
+          <p class="discription">
+            <b>Course Name: Python programming</b><br><br>
+            <b>Description</b><br />
+            Dive into the world of Python programming and master one of the most versatile and powerful languages used in software development, data analysis, and artificial intelligence.
+          </p>
+        </div>
+        <div class="course_name" onclick="redirectToCourse('ADS')">
+          <div class="course_pic"><img src="ads.png" alt="ads" class="img"></div>
+          <p class="discription">
+            <b>Course Name: Advanced data structures and algorithms</b><br><br>
+            <b>Description</b><br />
+            Advanced Data Structures, is a branch of computer science that deals with the design, analysis, and implementation of efficient data.
+          </p>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

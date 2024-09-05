@@ -1,0 +1,354 @@
+
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Mentor's LoginPAGE</title>
+     <style>
+        
+         .body {
+             background-image: linear-gradient(to right, rgb(92, 168, 200), rgb(153, 153, 153));
+             margin: 0;
+             padding: 0;
+             height: 100%;
+             margin-top: 90px;
+         }
+         .header {
+             background-color: rgb(87, 90, 90);
+             font-family: Georgia, 'Times New Roman', Times, serif;
+             font-size: medium;
+             height: 100px; /* Adjust height as needed */
+             width: auto;
+             display: flex;
+             align-items: center;
+             justify-content: center;
+             margin-bottom: 20px;
+         }
+         .header-box {
+             background-color: rgb(217, 217, 217);
+             opacity: 80%;
+             padding: 2px;
+             border-radius: 16px;
+             box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+             text-align: center;
+             max-width: 300px;
+             margin-left: -400px;
+             
+         }
+         .container {
+             display: flex;
+             flex-direction: column;
+             align-items: center;
+             justify-content: center;
+             margin-bottom: 50px;
+         }
+         .heading-box {
+             background-color: rgb(217, 217, 217);
+             opacity: 80%;
+             padding: 10px;
+             border-radius: 16px;
+             box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+             text-align: center;
+             max-width: 300px;
+             margin-bottom: 10px; /* Adjusted margin-bottom */
+             /* margin-left: 30px; */
+         }
+         .table_box {
+             background-color: rgb(217, 217, 217);
+             font-family: Georgia, 'Times New Roman', Times, serif;
+             opacity: 90%;
+             padding: 20px;
+             border-radius: 20px;
+             box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+             text-align: center;
+             max-width: 1000px; /* Adjusted max-width for the table */
+         }
+ 
+         table {
+             width: 100%;
+             border-collapse: collapse;
+         }
+         th, td {
+             padding: 5px;
+             text-align: left;
+             border-bottom: 1px solid rgb(205, 205, 183);
+             border-radius: 2px; /* Rounded corners for table cells */
+             white-space: nowrap; /* Prevent line breaks */
+             border: 1px solid #ddd; /* Add border */
+         }
+         th {
+             background-color: #f2f2f2;
+         }
+         tr:nth-child(even) {
+             background-color: rgb(205, 205, 183);
+         }
+         .action-buttons {
+             display: flex;
+             justify-content: space-around;
+         }
+         .approve-btn, .deny-btn {
+             padding: 5px 10px;
+             border-radius: 5px;
+             cursor: pointer;
+             
+         }
+         .approve-btn {
+             background-color: green;
+             color: white;
+         }
+         .deny-btn {
+             background-color: red;
+             color: white;
+         }
+         .review{
+            align-items: center;
+            
+         }
+        .logo {
+      height: 50px;
+      width: 60px;
+      border-radius: 50%;
+      background-color: aqua;
+      margin-left: 20px;
+      margin-top: 8px;
+      text-align: center;
+    }
+    .topbar {
+    background-color: rgb(87, 90, 90);
+      width: 100%;
+      height: 70px;
+      display: flex;
+      position: fixed;
+      top: 0;
+    }
+    .profile {
+      height: 50px;
+      width: 60px;
+      border-radius: 50%;
+      background-color: aqua;
+      margin-left: 20px;
+      margin-top: 8px;
+      text-align: center;
+      position: absolute;
+      right: 60px;
+    }
+    .name {
+        margin-left: 20px;
+    }
+    .menu {
+      position: absolute;
+      right: 0px;
+      margin-top: 19px;
+      margin-right: 20px;
+      font-size: 25px;
+    }
+    .link{
+  justify-content: center;
+  margin-top: 36PX;
+  padding-left: 1000px;
+}
+.button {
+    padding: 10px 20px;
+    background-image: linear-gradient(to bottom right, rgb(205, 205, 183), rgb(103, 103, 92));
+    color: #fff;
+    text-decoration: none;
+    border: 1px solid black;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 0 10px; /* Adjust horizontal margin */
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    height: 10px;
+    width: max-content;
+    text-align: center;
+    
+}
+#accept-request-0,#accept-request-1,#accept-request-2,#accept-request-3,#accept-request-4,#accept-request-5,#accept-request-6,#accept-request-7,#accept-request-8,#accept-request-9,#accept-request-10,#accept-request-11,#accept-request-12,#accept-request-13,#accept-request-14,#accept-request-15,#accept-request-16,#accept-request-17,#accept-request-18,#accept-request-19,#accept-request-20{
+    padding: 5px 10px;
+     border-radius: 5px;
+     cursor: pointer;
+    background-color: green;
+             color: white;
+}
+#reject-request-0,#reject-request-1,#reject-request-2,#reject-request-3,#reject-request-4,#reject-request-5,#reject-request-6,#reject-request-7,#reject-request-8,#reject-request-9,#reject-request-10,#reject-request-11,#reject-request-12,#reject-request-13,#reject-request-14,#reject-request-15,#reject-request-16,#reject-request-17,#reject-request-18,#reject-request-19,#reject-request-20{
+    padding: 5px 10px;
+     border-radius: 5px;
+     cursor: pointer;
+    background-color: red;
+             color: white;
+}
+
+     </style>
+ </head>
+ <form  action="/sendemail" method="post">
+ <body class="body">
+ <!-- <div class="header">
+     <div class="header-box">
+         <h1>LEARNING APP</h1>
+     </div>
+ </div> -->
+ <div class="topbar">
+    <div class="logo"><p>Logo</p></div>
+    <div class="name"><h2>Learning App</h2></div>
+    <div class ="link">
+    <a href="/mentor_open_page" class="button">Back</a></div>
+    <div class="profile"><p>Profile</p></div>
+    <div class="menu"><i class="fas fa-bars"></i></div>
+  </div>
+ 
+ <div class="container">
+     <div class="heading-box">
+         <h2 class="review">Application review system</h2>
+     </div>
+     <div class="table_box">
+         <table id="table-inside">
+            <div id="heading">
+             <tr>
+                <th>S.no</th>
+                 <th>Name</th>
+                 <th>Email</th>
+                 <th>Course</th>
+                 <!-- <th>Payment Status</th> -->
+                 <th>Approval</th>
+                 <th>Denies</th>
+             </tr>
+            </div>
+             <div id ="main">
+             <!-- {% for mentor in mentors %} -->
+                <!-- <tr>
+                    <td>{{ loop.index }}</td>
+                    <td>{{ mentor.first_name }} {{ mentor.last_name }}</td>
+                    <td>{{ mentor.email }}</td>
+                    <td>{{ mentor.course }}</td>
+                    <td class="action-buttons">
+                        <button class="approve-btn">Accept</button>
+                    </td>
+                    <td class="decline-btn">
+                        <button class="deny-btn">Decline</button>
+                    </td>
+                </tr> -->
+                <!-- {% endfor %} -->
+             </div>
+             <!-- Add more rows as needed -->
+         </table>
+     </div>
+     </form>
+ </div>
+ </body>
+ <script>
+    async function fetchRequestsFromAPI() {
+        console.log('enterwd fetch function')
+        try {
+            const response = await fetch('/api/requests');
+            const data = await response.json();
+            console.log(data);
+            return data;
+        } catch (error) {
+            console.error('Error fetching programs:', error);
+            return [];
+        }
+    }
+    
+    async function populateRequests() {
+    console.log('entered populate requests');
+    const data = await fetchRequestsFromAPI();
+    const container = document.getElementById("table-inside");
+    const head = `<tr>
+                    <th>S.no</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Course</th>
+                    <th>Approval</th>
+                    <th>Denies</th>
+                </tr>`;
+    console.log(data);
+    
+    let requestsHTML = '';
+    data.forEach((requestData, index) => {
+        console.log('first forEach');
+        const uniqueId = `request-${index}`;
+        const request = `
+            <tr id="${uniqueId}">
+                <td>${index+1}</td>
+                <td>${requestData.first_name} ${requestData.last_name}</td>
+                <td>${requestData.email}</td>
+                <td>${requestData.course}</td>
+                <td class="action-buttons">
+                    <button id="accept-${uniqueId}">Accept</button>
+                </td>
+                <td class="decline-btn">
+                    <button id="reject-${uniqueId}">Decline</button>
+                </td>
+            </tr>`;
+        
+        requestsHTML += request;
+    });
+    
+    container.innerHTML = head + requestsHTML;
+
+    // Attaching event listeners after elements are added to the DOM
+    data.forEach((requestData, index) => {
+        console.log('second forEach');
+        const uniqueId = `request-${index}`;
+        const acceptButton = document.getElementById(`accept-${uniqueId}`);
+        const rejectButton = document.getElementById(`reject-${uniqueId}`);
+    
+        if (acceptButton && rejectButton) { // Check if buttons exist
+            acceptButton.addEventListener('click', () => {
+                console.log(`Accept button clicked for email: ${requestData.email} and course: ${requestData.course}`);
+                var email = requestData.email;
+                var course = requestData.course;
+                var first_name = requestData.first_name;
+    
+                sendEmail(email, course, first_name, 'accept');
+                removeContainer(uniqueId);
+            });
+        
+            rejectButton.addEventListener('click', () => {
+                console.log(`Reject button clicked for email: ${requestData.email} and course: ${requestData.course}`);
+                var email = requestData.email;
+                var course = requestData.course;
+                var first_name = requestData.first_name;
+    
+                sendEmail(email, course, first_name, 'reject');
+                removeContainer(uniqueId);
+            });
+        } else {
+            console.error('One or both buttons not found');
+        }
+    });
+}
+
+    
+async function sendEmail(email, course, first_name, action) {
+    try {
+        const response = await fetch('/sendemail', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ email, course, first_name, action })
+        });
+        const data = await response.json();
+    } catch (error) {
+        console.error('Error sending email:', error);
+    }
+}
+
+    
+    function removeContainer(id) {
+        const container = document.getElementById(id);
+        if (container) {
+            container.style.animation = 'fadeOut 1s forwards';
+            setTimeout(() => {
+                container.remove();
+            }, 1000);
+        }
+    }
+    
+    document.addEventListener('DOMContentLoaded', function() {
+        console.log('DOM loaded')
+        populateRequests();
+    });
+    </script>
+    

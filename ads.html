@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+
+    <title>Learning App</title>
+  </head>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-image: linear-gradient(to bottom right, rgb(92, 168, 200), rgb(153, 153, 153));
+    }
+    .topbar {
+      background-color: rgb(87, 90, 90);
+      width: 100%;
+      height: 70px;
+      display: flex;
+      position: fixed;
+      top: 0;
+    }
+    /* .logo {
+      height: 50px;
+      width: 60px;
+      border-radius: 50%;
+      margin-left: 20px;
+      margin-top: 8px;
+      text-align: center;
+    } */
+    .profile {
+      height: 50px;
+      width: 60px;
+      border-radius: 50%;
+      background-color: aqua;
+      margin-left: 20px;
+      margin-top: 8px;
+      text-align: center;
+      position: absolute;
+      right: 60px;
+    }
+    .menu {
+      position: absolute;
+      right: 0px;
+      margin-top: 19px;
+      margin-right: 20px;
+      font-size: 25px;
+    }
+    .name {
+      margin-left: 20px;
+    }
+    .body_ {
+      margin-left: 30px;
+      margin-top: 80px;
+      overflow-y: auto;
+      height: 2000px;
+    }
+    .search-container {
+      position: relative;
+      margin-top: 10px;
+      margin-left: 460px;
+      width: 400px; /* Adjust as needed */
+    }
+    .search {
+      width: 100%;
+      background-color: #cdd1b9;
+      padding: 8px 30px 8px 10px; /* Adjust padding to position the icon correctly */
+      border: 1px solid #ccc;
+      border-radius: 20px;
+      box-sizing: border-box;
+    }
+    .search-button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      padding: 9px 10px; /* Adjust padding to position the icon correctly */
+      border: none;
+      background-color: #cdd1b9;
+      color: #666;
+      border-radius: 0 20px 20px 0;
+      cursor: pointer;
+    }
+    .course_cointainer {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin-top: 20px;
+    }
+    .course-container {
+      background-color: lightgray;
+      height: 1040px;
+      width: 94%;
+      margin-top: 15px;
+      margin-left: 15px;
+    }
+    .course_cspp {
+      margin-top: 40px;
+      display: flex;
+    }
+    .course_name {
+      background-color: lightgray;
+      height: 140px;
+      width: 680px;
+      display: flex;
+      margin-left: 15px;
+      cursor: pointer;
+    }
+    /* .course_pic {
+      height: 140px;
+      width: 170px;
+      background-color: aquamarine;
+      text-align: center;
+      flex-direction: column;
+    } */
+    .course_pic {
+      height: 140px;
+      width: 170px;
+      text-align: center;
+      flex-direction: column;
+      background-image: url('ads.png');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+    .course_pic1 {
+      height: 140px;
+      width: 170px;
+      text-align: center;
+      flex-direction: column;
+      background-image: url('ics.png');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+    .course_pic2 {
+      height: 140px;
+      width: 170px;
+      text-align: center;
+      flex-direction: column;
+      background-image: url('wad.png');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+    .text {
+      padding-top: 40px;
+    }
+    .discription {
+      width: calc(100% - 170px); /* Adjusted width for description */
+      padding: 20px;
+      margin: 0px;
+    }
+    .mentor {
+      height: 140px;
+      width: 170px;
+      background-color: aquamarine;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+    }
+    #mentor {
+      padding-top: 30px;
+    }
+    .mentor-details {
+      margin-top: 15px; /* Updated margin-top value */
+      margin-left: 25px;
+      font-weight: bold;
+      padding-top: 10px;
+    }
+    .course-details {
+      margin-left: 0px;
+    }
+    .about-course {
+      margin-bottom: 130px;
+      padding-left: 15px;
+      font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+      font-size: 17px;
+    }
+    .button{
+      width: 150px;
+      height: 50px;
+      border-radius: 20px;
+      background-color: rgb(108, 118, 168);
+      color: bisque;
+      margin-left: 490px;
+      text-align: center;
+      padding-top: 0.1px;
+      margin-top: 60px;
+      cursor: pointer;
+}
+    .pic1 {
+  height: 110px;
+  width: 110px;
+  padding-left: 10px; /* Remove background */
+  margin-top: -20px;
+  
+}
+
+.logo {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  color: #fff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+  </style>
+  <body>
+    <div class="topbar">
+      <img src="logo.png" alt="logo" class="pic1"><div class="logo">Patashala</div>
+      <div class="menu"><i class="fas fa-bars"></i></div>
+    </div>
+    <div class="body_">
+      <div class="search-container">
+        <input type="text" placeholder="search your course" class="search" />
+        <button type="submit" class="search-button">
+          <i class="fa fa-search"></i>
+        </button>
+      </div>
+      <div class="course-container">
+        <div class="course-details">
+          <!-- <div class="mentor">
+            <h3 id="mentor">Mentor</h3>s
+          </div> -->
+          <div class="mentor-details">
+            <h2>Mentor</h2>
+            <p>Name: Robert Sedgewick:</p>
+            <p>Qualification: Masters in Computer Science</p>
+          </div>
+        </div>
+        <div class="course_cspp">
+          <div class="course_pic"></div>
+          <p class="discription">
+              <b>Course Name: Advanced data structures and algorithms</b><br><br>
+              <b>Description</b><br />
+             Advanced data structures refer to complex and specialized data structures that are designed to efficiently solve specific types of problems. These structures often require more sophisticated algorithms for insertion, deletion, searching, and traversal compared to basic data structures like arrays, linked lists, stacks, and queues.
+          </p>
+        </div>
+        <div class="about-course">
+          <h3>Ratings: &nbsp;4.8/5</h3>
+          <h4>What you will learn in this course?</h4>
+          <ul>
+          <li>Understanding and implementing binary search trees (BSTs), AVL trees, red-black trees, and other self-balancing trees.</li>
+            <li>Analyzing the time complexities of tree operations like insertion, deletion, searching, and traversal.</li>
+            <li>Applications of trees in data storage, indexing, and searching algorithms.</li>
+            <li>Representing graphs using adjacency matrices, adjacency lists, and other data structures.</li>
+            <li>Exploring hashing techniques like hash tables, bloom filters, and hash functions.</li>
+          </ul>
+          <h4>Duration:</h4>
+      <p>You will complete this course in 3 months.</p>
+      <h4>Recordings Availability:</h4>
+      <p>All sessions will be recorded and accessible to students for revision and review purposes.</p>
+      <h4>Instructions:</h4>
+      <ul>
+        <li>Regular assignments and quizzes will be provided to assess your understanding.</li>
+        <li>Participation in online discussions and group projects is encouraged.</li>
+        <li>Office hours will be available for one-on-one doubt-clearing sessions with the instructor.</li>
+        <li>A certificate of completion will be awarded upon successful finishing of the course.</li>
+      </ul>
+      <h4>Start Date: <p>01-4-2024</p></h4>
+      <div class="button" onclick="redirectToCourse('join')"><h3>Join Course</h3></div>
+      </div>
+      <h2>Recommemded Courses</h2>  
+      <div class="course_cointainer">
+        <div class="course_name" onclick="redirectToCourse('ICS')">
+          <div class="course_pic1"></div>
+          <p class="discription">
+            <b>Course Name: Integrated computer systems</b><br><br>
+            <b>Description</b><br />
+            ICS, which stands for Information and Communication Technology, refers to the integration of telecommunications, computers.
+          </p>
+        </div>
+        <div class="course_name" onclick="redirectToCourse('WEB')">
+          <div class="course_pic2"></div>
+          <p class="discription">
+            <b>Course Name: Web development</b><br><br>
+            <b>Description</b><br />
+            Web development refers to the creation and design of the user interface and user experience of a website or web application.
+          </p>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

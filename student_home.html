@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+
+    <title>Learning App</title>
+  </head>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-image: linear-gradient(to bottom right, rgb(92, 168, 200), rgb(153, 153, 153));
+    }
+    .topbar {
+      background-color: rgb(87, 90, 90);
+      width: 100%;
+      height: 70px;
+      display: flex;
+      position: fixed;
+      top: 0;
+    }
+    .logo,
+    .pata {
+      height: 110px;
+      width: 110px;
+      border-radius: 50%;
+      margin-left: 15px;
+      margin-top: -10px;
+      text-align: center;
+    }
+    .profile,
+    .imgp {
+      height: 50px;
+      width: 60px;
+      border-radius: 50%;
+      margin-top: 5px;
+      text-align: center;
+      position: absolute;
+      right: 20px;
+    }
+    .menu {
+      position: absolute;
+      right: 0px;
+      margin-top: 19px;
+      margin-right: 20px;
+      font-size: 25px;
+    }
+    .name {
+      margin-left: 20px;
+      color: aliceblue;
+    }
+    .body_ {
+      margin-left: 30px;
+      margin-top: 80px;
+      overflow-y: auto;
+      height: 1100px;
+    }
+    .search-container {
+      position: relative;
+      margin-top: 10px;
+      margin-left: 460px;
+      width: 400px; /* Adjust as needed */
+    }
+    .search {
+      width: 100%;
+      background-color: #cdd1b9;
+      padding: 8px 30px 8px 10px; /* Adjust padding to position the icon correctly */
+      border: 1px solid #ccc;
+      border-radius: 20px;
+      box-sizing: border-box;
+    }
+    .search-button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      padding: 9px 10px; /* Adjust padding to position the icon correctly */
+      border: none;
+      background-color: #cdd1b9;
+      color: #666;
+      border-radius: 0 20px 20px 0;
+      cursor: pointer;
+    }
+    #filterButton {
+      float: right;
+      margin-right: 150px;
+    }
+    .filter-container {
+      position: relative;
+      margin-top: 20px;
+      /* Add any additional styling for the container */
+    }
+    .course_cointainer {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .course_name {
+      background-color: lightgray;
+      height: 170px;
+      width: 620px;
+      display: flex;
+      cursor: pointer;
+    }
+    .course_pic,
+    .img {
+      height: 170px;
+      width: 170px;
+      background-color: lightgray;
+      text-align: center;
+    }
+    .text {
+      padding-top: 40px;
+    }
+    .discription {
+      width: calc(100% - 170px); /* Adjusted width for description */
+      padding: 20px;
+    }
+    footer {
+      background-color: #333;
+      color: #fff;
+      padding: 20px 0;
+      text-align: center;
+    }
+
+    .footer-links a {
+      margin-right: 10px;
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .social-links{
+      margin-top: 15px;
+      margin-right: 10px;
+      color: #fff;
+      font-size: 24px;
+      color: #fff;
+      gap: 10px;
+    }
+    .container {
+      width: 80%;
+      margin: 0 auto;
+      padding: 20px 0;
+    }
+    #filterButton {
+  background-image: linear-gradient(to bottom right, rgb(205, 205, 183), rgb(103, 103, 92));
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  border-radius: 8px;
+  margin-right: 50px;
+}
+
+#filterButton:hover {
+  background-image: linear-gradient(to bottom right, rgb(103, 103, 92), rgb(205, 205, 183));
+}
+  </style>
+  <body>
+    <div class="topbar">
+      <div class="logo"><img src="logo.png" alt="logo" class="pata" /></div>
+      <div class="name"><h2>Patashala</h2></div>
+      <!-- <div class="menu"><i class="fas fa-bars"></i></div> -->
+    </div>
+    <div class="body_">
+      <div class="search-container">
+        <input type="text" placeholder="search your course" class="search" />
+        <button type="submit" onclick="searchCourses()" class="search-button">
+          <i class="fa fa-search"></i>
+        </button>
+      </div>
+      <div class="filter-container">
+        <button id="filterButton" onclick="toggleFilterForm()">Filter</button>
+        <form id="filterForm" class="filter-form" style="display: none">
+          <!-- Your filter form content here -->
+          <label for="category">Category:</label>
+          <select id="category" name="category">
+            <option value="">Select category</option>
+            <option value="programming">Programming</option>
+            <option value="Web Development">Web Development</option>
+            <option value="business">Business</option>
+            <option value="ads">ADS</option>
+            <!-- Add more options as needed -->
+          </select>
+          <label for="duration">Duration:</label>
+          <select id="duration" name="duration">
+            <option value="">Select duration</option>
+            <option value="short">Short (1-4 weeks)</option>
+            <option value="medium">Medium (5-8 weeks)</option>
+            <option value="long">Long (9+ weeks)</option>
+            <!-- Add more options as needed -->
+          </select>
+          <label for="startDate">Start Date:</label>
+          <input type="date" id="startDate" name="startDate" />
+          <button type="button" onclick="filterCourses()">Apply Filter</button>
+        </form>
+      </div>
+      <h2>Learn Courses</h2>
+      <div class="course_cointainer" id="courseContainer">
+        <div
+          class="course_name"
+          onclick="redirectToCourse('CSPP')"
+          data-category="programming"
+          data-duration="short"
+          data-start-date="2024-04-01"
+        >
+          <div class="course_pic">
+            <img src="python.png" class="img" alt="python" />
+          </div>
+          <div class="discription">
+            <p>
+              <b>Course Name: Python programming  </b><br><br>
+              <!-- Added course name here -->
+              <b>Description</b><br />
+              Python is a versatile and powerful programming language known for its simplicity, readability, and vast ecosystem of libraries and frameworks. 
+            </p>
+          </div>
+        </div>
+        <div
+          class="course_name"
+          onclick="redirectToCourse('WAD')"
+          data-category="Web Development"
+          data-duration="long"
+          data-start-date="2024-04-04"
+        >
+          <div class="course_pic">
+            <img src="wad.png" alt="wad" class="img" />
+          </div>
+          <div class="discription">
+            <p>
+              <b>Course Name: Web development</b><br><br>
+              <!-- Added course name here -->
+              <b>Description</b><br />
+              Web development refers to the creation and design of the user interface and user experience of a website or web application.
+            </p>
+          </div>
+        </div>
+        <div
+          class="course_name"
+          onclick="redirectToCourse('ICS')"
+          data-category="business"
+          data-duration="medium"
+          data-start-date="2024-04-04"
+        >
+          <div class="course_pic">
+            <img src="ics.png" alt="wad" class="img" />
+          </div>
+          <div class="discription">
+            <p>
+              <b>Course Name: Integrated computer systems</b><br><br>
+              <!-- Added course name here -->
+              <b>Description</b><br />
+              ICS, which stands for Information and Communication Technology, refers to the integration of telecommunications, computers.
+            </p>
+          </div>
+        </div>
+        <div
+          class="course_name"
+          onclick="redirectToCourse('ADS')"
+          data-category="ads"
+          data-duration="long"
+          data-start-date="2024-03-01"
+        >
+          <div class="course_pic">
+            <img src="ads.png" alt="wad" class="img" />
+          </div>
+          <div class="discription">
+            <p>
+              <b>Course Name: Advanced data structures and algorithms</b><br><br>
+              <!-- Added course name here -->
+              <b>Description</b><br />
+              Advanced Data Structures, is a branch of computer science that deals with the design, analysis, and implementation of efficient data.
+            </p>
+          </div>
+        </div>
+      </div>
+      <h2>Recommended Courses</h2>
+      <div
+        class="course_name"
+        data-category="Web Development"
+        data-duration="long"
+        data-start-date="2024-03-01"
+      >
+        <div class="course_pic">
+          <img src="ux-ui-logo-removebg-preview.png" alt="wad" class="img" />
+        </div>
+        <div class="discription">
+          <p>
+            <b>Course Name: UIUX</b><br><br>
+            <!-- Added course name here -->
+            <b>Description</b><br />
+            UI (User Interface) and UX (User Experience) are two closely related but distinct concepts in the realm of design, particularly in the context of digital products like websites, applications, and software.
+          </p>
+        </div>
+      </div>
+      <h2>More Courses</h2>
+      <div
+        class="course_name"
+        data-category="programming"
+        data-duration="long"
+        data-start-date="2024-03-01"
+      >
+        <div class="course_pic">
+          <img src="java-removebg-preview.png" alt="wad" class="img" />
+        </div>
+        <div class="discription">
+          <p>
+            <b>Course Name: Java</b><br><br>
+            <!-- Added course name here -->
+            <b>Description</b><br />
+            Java is built around the concept of objects, which represent real-world entities and encapsulate data and behavior. Object-oriented programming (OOP) in Java involves defining classes, creating objects.
+          </p>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div class="container">
+        <div class="footer-links">
+          <a href="#courses">Courses</a>
+          <a href="#about">About Us</a>
+          <a href="#blog">Blog</a>
+          <a href="#contact">Contact</a>
+        </div>
+        <div class="social-links">
+          <i class="fab fa-facebook-f"></i>
+          <i class="fab fa-twitter"></i>
+          <i class="fab fa-linkedin"></i>
+        </div>
+      </div>
+      <p>&copy; 2024 Learning App. All rights reserved.</p>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
